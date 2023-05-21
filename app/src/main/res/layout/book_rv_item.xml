@@ -2,16 +2,17 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp"
+    android:layout_margin="10dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="8dp"
     android:backgroundTint="@color/grey">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/idIVbook"
@@ -45,31 +46,37 @@
             android:text="Publisher"
             android:textColor="@color/black"
             android:textSize="11sp" />
-
-        <TextView
-            android:id="@+id/idTVPageCount"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/idTVpublisher"
-            android:layout_marginTop="3dp"
-            android:layout_toEndOf="@id/idIVbook"
-            android:padding="3dp"
-            android:text="Page count"
-            android:textColor="@color/black"
-            android:textSize="11sp" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/idTVDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/idTVPageCount"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="5dp"
-            android:padding="3dp"
-            android:text="date"
-            android:textColor="@color/black"
-            android:textSize="11sp" />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/idTVPageCount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@id/idTVpublisher"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="20dp"
+                android:padding="3dp"
+                android:text="Page count"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/idTVDate"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@id/idTVpublisher"
+                android:layout_marginTop="3dp"
+                android:padding="3dp"
+                android:text="date"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

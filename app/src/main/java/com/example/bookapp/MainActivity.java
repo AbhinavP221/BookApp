@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -206,12 +208,10 @@ public class MainActivity extends AppCompatActivity {
                             bookInfoArrayList.add(bookInfo);
 
                             BookAdapter adapter = new BookAdapter(bookInfoArrayList, MainActivity.this);
+                            RecyclerView rv = findViewById(R.id.idRVBooks);
 
-                            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this, RecyclerView.VERTICAL, false);
-                            RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.idRVBooks);
-
-                            mRecyclerView.setLayoutManager(linearLayoutManager);
-                            mRecyclerView.setAdapter(adapter);
+                            rv.setLayoutManager(new GridLayoutManager(MainActivity.this,2));
+                            rv.setAdapter(adapter);
                         }
 
                 } catch (JSONException e) {
